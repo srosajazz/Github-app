@@ -12,8 +12,6 @@ import {
 } from 'react-native';
 
 import styles from './styles';
-// import { async } from 'rsvp';
-// import console = require('console');
 
 export default class Welcome extends Component {
   // state
@@ -45,7 +43,7 @@ export default class Welcome extends Component {
       await this.checkUserExists(username);
       await this.saveUser(username);
 
-      navigation.navigate('Repositories');
+      navigation.navigate('User');
     } catch (err) {
       this.setState({ loading: false, error: true });
     }
@@ -60,9 +58,7 @@ export default class Welcome extends Component {
         <StatusBar barStyle="light-content" />
         <Text style={styles.title}>Welcome</Text>
         <Text style={styles.text}>Please enter your github user name.</Text>
-
         {error && <Text style={styles.error}>User does not exist.</Text>}
-
         <View style={styles.form}>
           <TextInput
             style={styles.input}
