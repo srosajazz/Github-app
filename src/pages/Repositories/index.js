@@ -41,7 +41,7 @@ export default class Repositories extends Component {
     const { data } = await api.get(`/users/${username}/repos`);
 
     this.setState({ data, loading: false, refreshing: false });
-  }
+  };
 
   renderListItem = ({ item }) => <RepositoryItem repository={item} />;
 

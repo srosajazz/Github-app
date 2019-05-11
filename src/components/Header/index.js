@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { withNavigation } from 'react-navigation';
+import PropTypes from 'prop-types';
+
 import {
   View, Text, TouchableOpacity, StatusBar, AsyncStorage,
 } from 'react-native';
@@ -27,13 +28,15 @@ class Header extends Component {
 
   render() {
     const { title } = this.props;
+
     return (
       <View style={styles.container}>
         <StatusBar barStyle="dark-content" />
+
         <View style={styles.left} />
         <Text style={styles.title}>{title}</Text>
         <TouchableOpacity onPress={this.signOut}>
-          <Icon name="exchange" size={16} style={styles.icons} />
+          <Icon name="exchange" size={16} style={styles.icon} />
         </TouchableOpacity>
       </View>
     );

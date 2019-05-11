@@ -4,10 +4,11 @@ import {
   createBottomTabNavigator,
 } from 'react-navigation';
 
+import { colors } from '~/styles';
+
 import Welcome from '~/pages/Welcome';
 import Repositories from '~/pages/Repositories';
 import Organizations from '~/pages/Organizations';
-import { colors } from '~/styles';
 
 const Routes = (userLogged = false) => createAppContainer(
   createSwitchNavigator(
@@ -32,7 +33,6 @@ const Routes = (userLogged = false) => createAppContainer(
       ),
     },
     {
-      // if initialRoute is true return Reposi if not Welcome
       initialRouteName: userLogged ? 'User' : 'Welcome',
     },
   ),
